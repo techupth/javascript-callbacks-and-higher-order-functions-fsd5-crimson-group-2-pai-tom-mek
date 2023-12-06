@@ -2,6 +2,17 @@
 
 function atLeastFive(array, operation) {
   // Start coding here
+  let scorePass = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] >= 70) {
+      scorePass.push(array[i]);
+    }
+  }
+  if (scorePass.length >= 5) {
+    operation(true);
+  } else {
+    operation(false);
+  }
 }
 
 const studentScoresRoom1 = [90, 40, 67, 80, 100, 15, 86, 12, 99, 67];
@@ -13,3 +24,19 @@ const studentScoresRoom3 = [67, 80, 100, 15, 12, 40, 67, 80, 100, 67];
 let scoreRoom1Result;
 let scoreRoom2Result;
 let scoreRoom3Result;
+
+atLeastFive(studentScoresRoom1, function (score) {
+  scoreRoom1Result = score;
+});
+
+atLeastFive(studentScoresRoom2, function (score) {
+  scoreRoom2Result = score;
+});
+
+atLeastFive(studentScoresRoom3, function (score) {
+  scoreRoom3Result = score;
+});
+
+console.log(scoreRoom1Result);
+console.log(scoreRoom2Result);
+console.log(scoreRoom3Result);
