@@ -10,7 +10,9 @@ function atLeastFive(array, operation) {
   }
   if (scorePass.length >= 5) {
     operation(true);
-  } else console.log(scorePass);
+  } else {
+    operation(false);
+  }
 }
 
 const studentScoresRoom1 = [90, 40, 67, 80, 100, 15, 86, 12, 99, 67];
@@ -28,8 +30,13 @@ atLeastFive(studentScoresRoom1, function (score) {
 });
 
 atLeastFive(studentScoresRoom2, function (score) {
-  scoreRoom1Result = score;
+  scoreRoom2Result = score;
+});
+
+atLeastFive(studentScoresRoom3, function (score) {
+  scoreRoom3Result = score;
 });
 
 console.log(scoreRoom1Result);
 console.log(scoreRoom2Result);
+console.log(scoreRoom3Result);
